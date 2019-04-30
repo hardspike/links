@@ -1,7 +1,7 @@
 "use strict";
 
 (function() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 4; i++) {
     document
       .getElementsByClassName("thumb")
       [i].addEventListener("mouseover", function(e) {
