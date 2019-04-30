@@ -1,17 +1,24 @@
 "use strict";
 
 (function() {
-  document
-    .getElementsByTagName("li")[0]
-    .addEventListener("mouseover", function(e) {
-      document.getElementsByTagName("img")[0].style.left = e.clientX;
-      document.getElementsByTagName("img")[0].style.top = e.clientY;
-      document.getElementsByTagName("img")[0].style.opacity = "1";
-    });
+  for (let i = 0; i < 5; i++) {
+    document
+      .getElementsByClassName("thumb")
+      [i].addEventListener("mouseover", function(e) {
+        document.getElementsByClassName("preview")[i].style.left =
+          e.clientX + "px";
+        document.getElementsByClassName("preview")[i].style.top =
+          e.clientY + "px";
+        document.getElementsByClassName("preview")[i].style.display =
+          "inline-block";
+        document.getElementsByClassName("preview")[i].style.position =
+          "absolute !important";
+      });
 
-  document
-    .getElementsByTagName("li")[0]
-    .addEventListener("mouseout", function() {
-      document.getElementsByTagName("img")[0].style.opacity = "0";
-    });
+    document
+      .getElementsByClassName("thumb")
+      [i].addEventListener("mouseout", function() {
+        document.getElementsByClassName("preview")[i].style.display = "none";
+      });
+  }
 })();
